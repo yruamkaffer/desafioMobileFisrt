@@ -30,21 +30,32 @@ header {
   color: white;
   padding-top: 3.2rem;
   padding-bottom: 2.9rem;
+  text-align: center;
 }
 
 header h1 {
   background-color: var(--lightpurple);
   font-family: var(--ff-titles);
-  font-size: 4rem;
+  font-size: 4.8rem;
   line-height: 3.4rem;
   letter-spacing: 0.05em;
-  padding: 0.8rem 0;
+  padding: 2.1rem 0;
   margin-top: 3.2rem;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 header svg {
-  margin-top: 1.2rem;
+  margin-top: 3.2rem;
+}
+
+header p {
+  font-family: var(--ff-texts);
+  margin-top: 3.2rem;
+  font-size: 2.4rem;
+  line-height: 2rem;
+  max-width: 27.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main {
@@ -53,17 +64,9 @@ main {
   margin: 0 auto;
 }
 
-main p {
-  font-family: var(--ff-texts);
-  margin-top: 1.4rem;
-  font-size: 2rem;
-  line-height: 1.5rem;
-  text-align: center;
-}
-
 main .cards {
   margin-top: 6rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 5rem;
 }
 
 main .card-wrapper {
@@ -98,6 +101,21 @@ main .card-title {
   animation-duration: 700ms;
 }
 
+footer {
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  color: var(--dark-text);
+  font-family: var(--ff-texts);
+  margin-bottom: 4.6rem;
+}
+
+footer p a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--dark-text);
+}
+
 @keyframes updown {
   0% {
     opacity: 0;
@@ -119,5 +137,69 @@ main .card-title {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 1100px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      'A B'
+      'A C';
+    grid-template-columns: 37.7rem 1fr;
+  }
+
+  header {
+    grid-area: A;
+  }
+
+  main {
+    grid-area: B;
+    max-width: 100%;
+  }
+
+  footer {
+    grid-area: C;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-areas:
+      'D E F'
+      'G E I'
+      'G H I';
+    width: 100%;
+  }
+
+  .card-wrapper {
+    margin: 3.2rem;
+  }
+
+  .cards > .card-wrapper:nth-child(1) {
+    grid-area: D;
+  }
+
+  .cards > .card-wrapper:nth-child(2) {
+    grid-area: E;
+  }
+
+  .cards > .card-wrapper:nth-child(3) {
+    grid-area: H;
+  }
+
+  .cards > .card-wrapper:nth-child(4) {
+    grid-area: G;
+  }
+
+  .cards > .card-wrapper:nth-child(5) {
+    grid-area: F;
+  }
+
+  .cards > .card-wrapper:nth-child(6) {
+    grid-area: I;
+  }
+
+  footer {
+    width: 100%;
   }
 }
